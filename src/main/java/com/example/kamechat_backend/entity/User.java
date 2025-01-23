@@ -10,10 +10,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "first_name")
-    public String firstName;
-    @Column(name = "last_name")
-    public String lastName;
+    @Column(name = "full_name")
+    public String fullName;
     @Column(name = "email", unique = true)
     public String email;
+    @Column(name = "picture")
+    public String picture;
+    @Column(name = "status")
+    public String status;
 }

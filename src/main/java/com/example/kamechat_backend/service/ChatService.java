@@ -5,7 +5,7 @@ import com.example.kamechat_backend.entity.Message;
 import java.util.List;
 
 public interface ChatService {
-    void saveMessage(Message message);
+    Message saveMessage(Message message);
 
     List<Message> getAllMessages(String chatId);
 }

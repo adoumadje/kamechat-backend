@@ -12,11 +12,15 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "sender_id")
+    @ManyToOne(cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER)
+    @JoinColumn(name = "sender_id")
     private User sender;
-    @Column(name = "receiver_id")
+    @ManyToOne(cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER)
+    @JoinColumn(name = "receiver_id")
     private User receiver;
-    @Column(name = "chat_id", unique = true)
+    @Column(name = "chat_id")
     private String chatId;
     @Column(name = "timestamp")
     private LocalDateTime timestamp;

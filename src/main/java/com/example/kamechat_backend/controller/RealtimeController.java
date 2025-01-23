@@ -26,7 +26,7 @@ public class RealtimeController {
 
     @MessageMapping("/unicast-message")
     public void unicastMessage(Message message) {
-        chatService.saveMessage(message);
+        message = chatService.saveMessage(message);
         simpMessagingTemplate.convertAndSendToUser(
                 message.getReceiver().getId().toString(),
                 "/chat",

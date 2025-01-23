@@ -24,7 +24,7 @@ public class ChatRestController {
     }
 
     @GetMapping("/get-all-messages")
-    public List<Message> getAllMessages(@RequestParam String chatId) {
+    public List<Message> getAllMessages(@RequestParam("chatId") String chatId) {
         return chatService.getAllMessages(chatId);
     }
 }
