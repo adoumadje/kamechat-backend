@@ -14,10 +14,14 @@ public class ChatServiceImpl implements ChatService {
     private final MessageRepository messageRepository;
     private final UserRepository userRepository;
 
+    private final TranslationService translationService;
+
     public ChatServiceImpl(MessageRepository messageRepository,
-                           UserRepository userRepository) {
+                           UserRepository userRepository,
+                           TranslationService translationService) {
         this.messageRepository = messageRepository;
         this.userRepository = userRepository;
+        this.translationService = translationService;
     }
 
     @Transactional
